@@ -1,0 +1,6 @@
+<view class='container'>
+  <view wx:for='{{funList}}' wx:key='{{index}}' class='fun_item' bindtap='handleClick' data-index='{{index}}'>
+    <text>{{item.name}}</text>
+    <text class='iconfont icon-qianjin'></text>
+  </view>
+</view>

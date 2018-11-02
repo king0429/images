@@ -1,0 +1,26 @@
+<view class='container'>
+  <view class='form'>
+    <view class='board'>
+      <image src='/static/img/logo_green.png'></image>
+    </view>
+    <view class='form_item'>
+      <view class='label'>
+        <text>手机号</text>
+        <!-- <view bindtap='handleBind'><button open-type='getPhoneNumber' bindgetphonenumber='handleBind'>微信手机号快速注册</button></view> -->
+      </view>
+      <view>
+        <input type='number' bindinput='handleInput' data-index='0'></input>
+      </view>
+    </view>
+    <view class='form_item'>
+      <view class='label'>
+        <text bindtap='handleVerify'>{{seconds}}</text>
+      </view>
+      <view>
+        <input maxlength='4' bindinput='handleInput' data-index='1'></input>
+      </view>
+    </view>
+    <view class='err_info'>{{errInfo}}</view>
+    <view class='btn_sign' bindtap='handleSign'>注册</view>
+  </view>
+</view>

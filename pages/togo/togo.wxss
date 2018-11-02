@@ -1,0 +1,67 @@
+/* pages/togo/togo.wxss */
+page {
+  height: 100%;
+  background: #C1EDC9;
+  position: relative;
+}
+.container {
+  height: 100%;
+  background: #fdfdfd;
+}
+.board {
+  height: 37%;
+  min-height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #C1EDC9;
+  /* color: #fff; */
+}
+.btn_create {
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+  line-height: 240rpx;
+  color: #B8DCE1;
+}
+.board .btn_tip {
+  margin-top: 30rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+.fun_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.fun_wrap view {
+  width: calc(50% - 1px);
+  height: 240rpx;
+  line-height: 240rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fun_wrap view text:first-child {
+  font-size: 42rpx;
+  margin-right: 10rpx;
+}
+.fun_wrap view:nth-child(1) {
+  border-right: 1px solid #fff;
+}
+.fun_wrap view:nth-child(3) {
+  border-right: 1px solid #C1EDC9;
+}
+.fun_wrap view:nth-child(1), .fun_wrap view:nth-child(2) {
+  background: #C1EDC9;
+  color: #fff;
+  border-top: 1px solid #fff;
+}
+.fun_wrap view:nth-child(3), .fun_wrap view:nth-child(4) {
+  background: #fff;
+  color: #C1EDC9;
+  border-bottom: 1px solid #eaeaea; 
+}

@@ -1,0 +1,60 @@
+<view class='container'>
+  <view class='search'>
+    <input placeholder='请输入要搜索的联系人' placeholder-class='input_pla' bindinput='handleSearch'>
+    </input>
+  </view>
+  <view class='contact_list'>
+    <scroll-view upper-threshold='0' scroll-left='{{item.left}}' scroll-x class='contact_item' wx:for='{{contact}}' wx:key='{{index}}' wx:if="{{item.show === 1}}">
+      <view class='show_item' bindtap='handleModal' data-switch='2' data-item='{{item}}' data-index="{{index}}">
+        <view>{{item.name}}</view>
+        <view>{{item.phone}}</view>
+      </view>
+      <view class='hide_item'>
+        <view bindtap="handleModal" data-item='{{item}}' data-index='{{index}}' data-switch='1'>删除</view>
+      </view>    
+    </scroll-view>
+  </view>
+  <view class='create_contact' bindtap='handleModal'>添加快速联系人</view>
+</view>
+<view class='modal' wx:if="{{showModal === 1}}">
+  <view class='window'>
+    <view class='win_title'>添加联系人</view>
+    <view class='win_item'>
+      <input bindinput='handleInput' maxlength='32' data-index='1' placeholder='输入联系人名称'></input>  
+    </view>
+    <view class='win_item'>
+      <input bindinput='handleInput' data-index='2' maxlength='11' type='number' placeholder='请输入手机号码'></input>  
+    </view>
+    <view class='win_error'>{{errInfo}}</view>
+    <view class='win_operate'>
+      <view bindtap='handleAdd'>添加</view>
+      <view bindtap='handleCancel'>取消</view>
+    </view>
+  </view>
+</view>
+<view class='modal' wx:if='{{showModal === 2}}'>
+  <view class='window'>
+    <view class='win_title'>确认删除</view>
+    <view class='win_content'>您将删除联系人{{delContent}}？</view>
+    <view class='err_btn'>
+      <view bindtap='handleDelete'>确认</view>
+      <view bindtap='handleCancel'>取消</view>
+    </view>
+  </view>
+</view>
+<view class='modal' wx:if="{{showModal === 3}}">
+  <view class='window'>
+    <view class='win_title'>修改联系人</view>
+    <view class='win_item'>
+      <input bindinput='handleInput' maxlength='32' data-index='1' placeholder='输入联系人名称' value='{{name}}'></input>  
+    </view>
+    <view class='win_item'>
+      <input bindinput='handleInput' data-index='2' maxlength='11' type='number' placeholder='请输入手机号码' value='{{phone}}'></input>  
+    </view>
+    <view class='win_error'>{{errInfo}}</view>
+    <view class='win_operate'>
+      <view bindtap='handleUpdate'>修改</view>
+      <view bindtap='handleCancel'>取消</view>
+    </view>
+  </view>
+</view>

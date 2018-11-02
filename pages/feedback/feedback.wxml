@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class='feedback_title'>
+    <input placeholder='请输入标题' value='{{title}}' bindinput='handleInput' data-index='1' maxlength='16'></input>
+  </view>
+    <view class='feedback_title'>
+    <input placeholder='请输入联系电话' bindinput='handleInput' value='{{phone}}' data-index='2'  maxlength='11' type='number'></input>
+  </view>
+  <view class='feedback_content'>
+    <textarea maxlength='256' bindinput='handleInput' data-index='3' value='{{content}}' placeholder='请输入反馈内容'></textarea>
+  </view>
+  <view class='feedback_img'>
+    <view class='img_list' wx:key='{{index}}' wx:for='{{imgs}}'>
+      <image src='{{item.path}}'></image>
+      <view bindtap='handleDelete' data-index='{{index}}'>-</view>
+    </view>
+    <view class='add_img' bindtap='handleUpload' wx:if="{{imgs.length < 1}}">+</view>
+  </view>
+  <view class='err_info'>{{errInfo}}</view>
+  <view bindtap='handleSubmit' class='feedback_submit'>提交</view>
+</view>

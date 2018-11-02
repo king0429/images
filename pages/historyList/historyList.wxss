@@ -1,0 +1,36 @@
+/* pages/historyList/historyList.wxss */
+page {
+  min-height: 100%;
+  background: #f4f4f4;
+}
+.history_list {
+  background: #fff;
+  padding: 0 20rpx;
+}
+.history_item {
+  border-bottom: 1px solid #eaeaea;
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+.item_content {
+  width: 88%;
+}
+
+.item_content .item_line {
+  line-height: 56rpx;
+  display: flex;
+}
+.item_line text:first-child {
+  margin-right: 20rpx;
+  width: 18%;
+}
+.item_icon {
+  width: 12%;
+  text-align: right;
+  color: #999;
+}
+view.sel_line {
+  background: #f2f2f2;
+}

@@ -1,0 +1,109 @@
+<view class='container'>
+  <view class='form'>
+    <view class='form_item_three'>
+      <view class='label'>出发地</view>
+      <view>
+        <picker mode='region' bindchange='handleChange' data-index="0">
+          <view style='{{form.start_dist === "请选择出发地点" ? "color:#999":"color:#333"}}'>{{form.start_dist}}</view>
+        </picker>
+      </view>
+      <view class='position'>
+        <text class='iconfont icon-Shapecopy' bindtap='handlePosition'></text>
+      </view>
+    </view>
+    <view class='form_item textarea'>
+      <view class='label'>详细地址</view>
+      <view>
+        <textarea bindinput='handleInput' data-key='start_dist_detail' placeholder='请输入详细地址'></textarea>
+      </view>
+    </view>
+    <view class='form_item'>
+      <view class='label'>目的地</view>
+      <view>
+        <picker mode='region' bindchange='handleChange' data-index='1'>
+          <view style='color:{{form.end_dist === "请选择目的地址" ? "#999": "#333"}}'>{{form.end_dist}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class='form_item textarea'>
+      <view class='label'>详细地址</view>
+      <view>
+        <textarea data-key='end_dist_detail' bindinput='handleInput' placeholder='请输入详细地址'></textarea>
+      </view>
+    </view>
+    <view class='form_item'>
+      <view class='label'>交通工具编号</view>
+      <view>
+        <input placeholder='请填写交通工具编号' bindinput='handleInput' data-key='transform_number'></input>
+      </view>
+    </view>
+    <view class='form_tip'>填写行程车牌号，火车车次或航班号</view>
+    <view class='form_item_three'>
+      <view class='label'>联系电话</view>
+      <view>
+        <input placeholder='请输入联系人电话' bindinput='handleInput' data-key='phone' type='number' maxlength='11' value='{{cPhone}}'></input>
+      </view>
+      <view class='book'>
+        <text class='iconfont icon-tongxunlu' bindtap='handleList'></text>
+      </view>
+    </view>
+    <view class='add_contact'>
+      <text bindtap='handleContact'>将电话添加到联系人列表</text>
+    </view>
+    <view class='form_item_three'>
+      <view class='label'>预计到达日期</view>
+      <view>
+        <picker mode='date' bindchange='handleChange' data-index='2'>
+          <view style='color: {{form.end_date === "请选择到达日期" ? "#999" : "#333"}}'>{{form.end_date}}</view>
+        </picker>
+      </view>
+      <view class='today'>
+        <text class='iconfont icon-day' bindtap='handleDate'></text>
+      </view>
+    </view>
+    <view class='form_item'>
+      <view class='label'>预计到达时间</view>
+      <view>
+        <picker mode='time' bindchange='handleChange' data-index='3'>
+          <view style='color: {{form.end_time === "请选择到达时间" ? "#999" : "#333"}}'>{{form.end_time}}</view>
+        </picker>
+      </view>      
+    </view>
+  </view>
+  <view class='err_info'>{{errInfo}}</view>
+  <view class='operate_line'>
+    <view>
+      <text bindtap='handleClick' data-index='0'>添加到快速方案</text>
+    </view>
+    <view bindtap='handleClick' data-index='1'>创建行程单</view>    
+  </view>
+</view>
+<view class='modal' wx:if="{{showModal === 1}}">
+  <view class='window'>
+    <view class='win_title'>添加联系人</view>
+    <view class='win_item'>
+      <input bindinput='handleName' maxlength='32' data-index='1' placeholder='输入联系人名称'></input>  
+    </view>
+    <view class='win_error'>{{errAdd}}</view>
+    <view class='win_operate'>
+      <view bindtap='handleAdd'>添加</view>
+      <view bindtap='handleCancel'>取消</view>
+    </view>
+  </view>
+</view>
+<view class='modal' wx:if="{{showModal === 2}}">
+  <view class='win_list'>
+    <view class='contract_list'>
+      <view class='{{checkIndex === index ? "checked contact_item" : "contact_item"}}' wx:for='{{contact}}' wx:key="{{index}}" bindtap='handleCheck' data-index='{{index}}' data-phone="{{item.phone}}">
+        <view>
+          <text>名称：</text>
+          <text>{{item.name}}</text>
+        </view>
+        <view>
+          <text>电话：</text>
+          <text>{{item.phone}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,116 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wxccffe1a08e43a80d",
+	"projectname": "%E5%BF%83%E9%9A%8F%E6%80%A7",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 11,
+			"list": [
+				{
+					"id": -1,
+					"name": "未出发",
+					"pathName": "pages/togo/togo",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "行程中",
+					"pathName": "pages/going/going",
+					"query": "id=5bb6cb76a4cd960ee9669bbe"
+				},
+				{
+					"id": -1,
+					"name": "表单",
+					"pathName": "pages/item_create/item_create",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "行程中",
+					"pathName": "pages/going/going",
+					"query": "id=5bb6cb76a4cd960ee9669bbe"
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/settings/settings",
+					"query": "id=5bb6cb76a4cd960ee9669bbe"
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/sign/sign",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "录音列表",
+					"pathName": "pages/recordList/recordList",
+					"query": "id=5bb6cb76a4cd960ee9669bbe"
+				},
+				{
+					"id": -1,
+					"name": "联系人",
+					"pathName": "pages/contacts/contacts",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "反馈",
+					"pathName": "pages/feedback/feedback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "历史列表",
+					"pathName": "pages/historyList/historyList",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "历史详情",
+					"pathName": "pages/historyDetail/historydetail",
+					"query": "id=5bb5e82a7d17d30deb43a97f"
+				},
+				{
+					"id": -1,
+					"name": "安全中心",
+					"pathName": "pages/safecenter/safecenter",
+					"query": "id=5bb5e82a7d17d30deb43a97f"
+				}
+			]
+		}
+	}
+}

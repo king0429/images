@@ -1,0 +1,53 @@
+<view class='container'>
+  <view class='board'>
+    <view class='btn_create'>报警</view>
+    <view class='btn_tip'>我们将第一时间联系您的紧急联系人</view>
+    <view class='{{"state " + showClass}}'>{{stateInfo}}</view>
+  </view>
+    <view wx:if='{{showDetail === 1}}' class='show_detail'>
+    <view>预计到达时间：{{travelDetail.date_time === '' ? '用户未填写' : travelDetail.date_time}}</view>
+    <view>目的地：{{travelDetail.end_dist === '' ? '用户未填写' : travelDetail.end_dist}}</view>
+    <view>详细地址：{{ travelDetail.end_dist_detail === '' ? '用户未填写' : travelDetail.end_dist_detail}}</view>
+  </view>  
+  <view class='fun_wrap'>
+    <view bindtap='handleOperate' data-index='0'>
+      <text class='{{funList[0].icon}}'></text>
+      <text>{{funList[0].name}}</text>
+    </view>
+    <view bindtap='handleOperate' data-index='1'>
+      <text class='{{funList[1].icon}}'></text>
+      <text>{{is_record === 0 ? '开启' : '结束'}}{{funList[1].name}}</text>
+    </view>
+    <view bindtap='handleOperate' data-index='2'>
+      <text class='{{funList[2].icon}}'></text>
+      <text>{{is_position === 0 ? '当前位置' : '正在获取位置'}}</text>
+    </view>
+    <view bindtap='handleOperate' data-index='3'>
+      <text class='{{funList[3].icon}}'></text>
+      <text>{{funList[3].name}}</text>
+    </view>            
+    <!-- <view wx:for='{{funList}}' wx:key='{{index}}' bindtap='handleOperate' data-index='{{index}}' wx:if="{{index === 1}}">
+      <text class='{{item.icon}}'></text>
+      <text>{{is_record === 0 ? '开启' + item.name : '结束' + item.name}}</text>
+    </view>     -->
+  </view>
+  <view class='end'>
+    <text bindlongtap='handleClick'>长按结束行程</text>
+  </view>
+  <view class='slide_top {{slideClass}}'>{{'当前位置：' + positionDetail}}</view>
+</view>
+<!-- 弹框 -->
+<view class='show_modal' wx:if='{{showModal === 1}}'>
+  <view class='window'>
+    <view class='win_title'>{{window.title}}</view>
+    <view class='win_content'>{{window.content}}</view>
+    <view class='win_input'>
+      <input placeholder='请输入联系人电话' bindinput='handleInput'></input>
+    </view>
+    <view class='errr_info'>{{errInfo}}</view>
+    <view class='win_btn'>
+      <view bindtap='handleSure'>确认</view>
+      <view bindtap='handleCancel'>取消</view>
+    </view>
+  </view>
+</view>

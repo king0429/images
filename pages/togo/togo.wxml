@@ -1,0 +1,12 @@
+<view class='container'>
+  <view class='board'>
+    <view class='btn_create' bindtap='handleCreate'>创建行程</view>
+    <view class='btn_tip'>长按快速报警</view>
+  </view>
+  <view class='fun_wrap'>
+    <view wx:for='{{funList}}' wx:key='{{index}}' bindtap='handleClick' data-index='{{index}}'>
+      <text class='{{item.icon}}'></text>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</view>

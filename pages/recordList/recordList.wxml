@@ -1,0 +1,27 @@
+<view class='container'>
+  <view class='record_list'>
+    <view wx:for='{{list}}' class='record_item' wx:key='{{index}}'>
+      <view class='show_audio'>
+        <audio id='{{item._id}}' src='{{root + item.filename}}'></audio>
+        <view wx:if="{{item.playing}}">
+          <text class='iconfont icon-yuyin'></text>
+        </view>
+        <view wx:if="{{!item.isplaying}}">
+          <view class='symbol'></view>
+        </view>
+      </view>
+      <view class='btn_list'>
+        <view class='control'>
+          <view wx:for='{{controls}}' wx:key='{{index}}' class='control_item'>
+            <text class='{{item.icon}}'></text>
+            <text>{{item.name}}</text>
+          </view>       
+        </view>
+        <view class='delete'>
+          <text class='iconfont icon-shanchu'></text>
+          <text>删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

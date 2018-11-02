@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class='board'>
+    <view class='board_img'>
+      <image src='{{info.avatar}}'></image>
+    </view>
+    <view class='board_info'>
+      <view>{{info.name}}</view>
+      <view>{{info.phone}}</view>
+      <view>共出行{{info.times}}次。</view>
+    </view>
+  </view>
+  <view class='btn_list'>
+    <view bindtap='handleUpadte' data-key='name'>修改姓名</view>
+    <view bindtap='handleUpadte' data-key='phone'>修改手机号</view>
+    <view>敬请期待</view>
+  </view>
+  <view class='bye'> 
+    <text>注销账号</text>
+  </view>
+</view>

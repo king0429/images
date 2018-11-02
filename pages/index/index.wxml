@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class='container'>
+  <image src='{{logo}}'></image>
+  <view class='slogan'>{{slogan}}</view>
+</view>

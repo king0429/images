@@ -1,0 +1,54 @@
+<view class='container'>
+  <view class='hisory_line'>
+    <view>
+      <text>行程编号：</text>
+      <text>{{history._id}}</text>
+    </view>
+    <view>
+      <text>创建时间：</text>
+      <text>{{history.show_time}}</text>
+    </view>
+  </view>
+  <view class='hisory_item'>
+    <view>出发地点：</view>
+    <view style='{{!history.start_dist ? "color: #999" : ""}}'>{{history.start_dist || '暂无出发地点'}}</view>
+  </view>
+  <view class='hisory_item_line'>
+    <view>详细地址：</view>
+    <view style='{{!history.start_dist_detail ? "color: #999" : ""}}'>{{history.start_dist_detail || '未填写出发地址'}}</view>
+  </view>
+  <view class='hisory_item'>
+    <view>结束地点：</view>
+    <view style='{{!history.end_dist ? "color: #999" : ""}}'>{{history.end_dist || '暂无到达地点'}}</view>
+  </view>
+  <view class='hisory_item_line'>
+    <view>详细地址：</view>
+    <view style='{{!history.end_dist_detail ? "color: #999" : ""}}'>{{history.end_dist_detail || '未填写到达地址'}}</view>
+  </view>
+  <view class='hisory_item'>
+    <view>预计出发时间：</view>
+    <view style='{{!history.start_time ? "color: #999" : ""}}'>{{history.start_time || '未填写出发时间'}}</view>
+  </view>
+  <view class='hisory_item'>
+    <view>预计结束时间：</view>
+    <view style='{{!history.end_time ? "color: #999" : ""}}'>{{history.end_time || '未填写到达时间'}}</view>
+  </view>
+  <view class='hisory_item'>
+    <view>实际结束时间：</view>
+    <view>{{history.real_end_time}}</view>
+  </view>
+  <view class='hisory_item'>
+    <view>联系电话：</view>
+    <view>{{history.phone}}</view>
+  </view>
+  <view class='btn' bindtap='handleModal'>删除行程</view>
+</view>
+<view class='modal' wx:if='{{showModal === 1}}'>
+  <view class='window'>
+    <view class='win_title'>确认删除</view>
+    <view class='win_btn'>
+      <view bindtap='handleDelete'>确认</view>
+      <view bindtap='handleCancel'>取消</view>
+    </view>
+  </view>
+</view>

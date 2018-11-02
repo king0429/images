@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/togo/togo",
+    "pages/going/going",
+    "pages/item_create/item_create",
+    "pages/settings/settings",
+    "pages/sign/sign",
+    "pages/recordList/recordList",
+    "pages/contacts/contacts",
+    "pages/center/center",
+    "pages/feedback/feedback",
+    "pages/historyList/historyList",
+    "pages/historyDetail/historydetail",
+    "pages/safecenter/safecenter"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "心随行",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#C1EDC9",
+    "disableScroll": true
+  }
+}
